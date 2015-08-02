@@ -1,8 +1,13 @@
 # Sublime Text
+
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
-# theme 'agnoster'
+########################
+# Zsh theme 'agnoster' #
+########################
+
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
+
 # install Powerline fonts for theme 'agnoster'
 font_dir=`mktemp -d`
 if [$? -ne 0]; then
@@ -16,3 +21,7 @@ if [$? -ne 0]; then
 else
 	$font_dir/install.sh
 fi
+
+# set default user
+echo "# for theme 'agnoster'" >> .zshrc
+echo "export DEFAULT_USER=`whoami`" >> .zshrc

@@ -20,6 +20,12 @@ ssh-add ~/.ssh/id_rsa
 brew install gpg
 brew_check $?
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable --ruby=2.2.2
+curl -sSL https://get.rvm.io | bash -s stable
+rvm reset
+# same as `rvm --default use system` after installing any ruby
 
-# https://packagecontrol.io/installation
+# Git
+full_name="$(dscl . -read /Users/`whoami` RealName | cut -d ' ' -f 2-)"
+# here we assume that the outcome of `dscl` be single line
+git config --global user.name $full_name
+git config --global user.email franklinyu@hotmail.com # should be variable

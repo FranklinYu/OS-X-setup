@@ -29,3 +29,4 @@ full_name="$(dscl . -read /Users/`whoami` RealName | cut -d ' ' -f 2-)"
 # here we assume that the outcome of `dscl` be single line
 git config --global user.name $full_name
 git config --global user.email franklinyu@hotmail.com # should be variable
+git config --global push.default simple

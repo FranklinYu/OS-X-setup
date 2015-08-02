@@ -23,5 +23,6 @@ else
 fi
 
 # set default user
-echo "# for theme 'agnoster'" >> .zshrc
-echo "export DEFAULT_USER=`whoami`" >> .zshrc
+if [ -f ~/.zshrc ]; then echo >> ~/.zshrc; fi
+echo "# for theme 'agnoster'" >> ~/.zshrc
+echo "export DEFAULT_USER=`whoami`" >> ~/.zshrc

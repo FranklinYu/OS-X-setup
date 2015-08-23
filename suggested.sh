@@ -30,3 +30,7 @@ full_name="$(dscl . -read /Users/`whoami` RealName | cut -d ' ' -f 2-)"
 git config --global user.name $full_name
 git config --global user.email franklinyu@hotmail.com # should be variable
 git config --global push.default simple
+
+# Zsh
+if [ -f ~/.zshrc ]; then echo >> ~/.zshrc; fi
+cat suggested/.zshrc >> ~/.zshrc

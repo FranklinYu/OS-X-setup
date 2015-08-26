@@ -25,8 +25,8 @@ rvm reset
 # same as `rvm --default use system` after installing any ruby
 
 # Git
-full_name="$(dscl . -read /Users/`whoami` RealName | cut -d ' ' -f 2-)"
-# here we assume that the outcome of `dscl` be single line
+full_name="$(dscl . -read /Users/`whoami` RealName | tr "\n" " " |
+    sed 's/RealName: *//')"
 git config --global user.name $full_name
 git config --global user.email franklinyu@hotmail.com # should be variable
 git config --global push.default simple

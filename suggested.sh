@@ -21,8 +21,6 @@ brew install gpg
 brew_check $?
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
-rvm reset
-# same as `rvm --default use system` after installing any ruby
 
 # Git
 full_name_default="$(dscl . -read /Users/`whoami` RealName | tr "\n" " " |

@@ -36,3 +36,6 @@ git config --global push.default simple
 if [ -f ~/.zshrc ]; then echo >> ~/.zshrc; fi
 cat suggested/.zshrc >> ~/.zshrc
 cp suggested/.bash_aliases ~/.bash_aliases
+
+# Vim
+cp suggested/.vimrc ~/.vimrc

@@ -8,7 +8,7 @@ brew_check() {
 }
 
 # install tools
-brew install tree wget
+brew install tree wget pandoc
 brew_check $?
 
 # SSH key

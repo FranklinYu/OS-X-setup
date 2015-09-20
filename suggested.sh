@@ -4,7 +4,7 @@ brew_check() {
 	if [$1 -ne 0]; then
 		echo "$0: Can't install with Homebrew, exiting..."
 		exit 1
-	else
+	fi
 }
 
 # install tools
@@ -12,7 +12,7 @@ brew install tree wget
 brew_check $?
 
 # SSH key
-if [ -f ~/.ssh/id_rsa ]; then ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''; fi
+if [ ! -f ~/.ssh/id_rsa ]; then ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''; fi
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 

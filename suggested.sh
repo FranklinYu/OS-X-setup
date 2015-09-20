@@ -35,3 +35,4 @@ git config --global push.default simple
 # Zsh
 if [ -f ~/.zshrc ]; then echo >> ~/.zshrc; fi
 cat suggested/.zshrc >> ~/.zshrc
+cp suggested/.bash_aliases ~/.bash_aliases

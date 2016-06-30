@@ -1,3 +1,5 @@
+set -e -o pipefail
+
 print_warning() {
 	tput setaf 3
 	echo $1
@@ -5,26 +7,10 @@ print_warning() {
 }
 
 # [Homebrew](http://brew.sh/)
-install_homebrew() {
-	local script=`mktemp`
-	local url='https://raw.githubusercontent.com/Homebrew/install/master/install'
-	local ret_val
-
-	if curl --fail --silent --show-error --location --output "$script" $url &&
-		ruby "$script"
-	then
-		ret_val=0
-	else
-		ret_val=1
-	fi
-
-	rm "$script"
-	return $ret_val
-}
 if /usr/bin/which -s brew; then
 	print_warning 'Warning: Homebrew found; installation skipped.'
 else
-	install_homebrew || exit 1
+	curl --fail --silent --show-error --location $homebrew_url | ruby
 fi
 brew_check() {
 	if [$1 -ne 0]; then

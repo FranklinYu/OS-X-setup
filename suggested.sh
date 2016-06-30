@@ -1,5 +1,15 @@
+print_warning() {
+	tput setaf 3
+	echo $1
+	tput sgr 0
+}
+
 # [Homebrew](http://brew.sh/)
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if /usr/bin/which -s brew; then
+	print_warning 'Warning: Homebrew found; installation skipped.'
+else
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 brew_check() {
 	if [$1 -ne 0]; then
 		echo "$0: Can't install with Homebrew, exiting..."

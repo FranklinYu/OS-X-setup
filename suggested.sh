@@ -2,8 +2,26 @@ set -e -o pipefail
 
 print_info() {
 	tput setaf 2
-	echo "$1"
+	echo "$@"
 	tput sgr 0
+}
+
+# Ensure that a file exist and contains some string
+#
+# $1 filename
+# $2 a string to be included in the file
+# $3 (optional) a phrase describing $2. Empty string is regarded as missing.
+ensure_include() {
+	if ! [ -f abc ]; then
+		echo "$2" > "$1"
+		print_info "file <$1> created" ${3:+with "$3"}
+	elif fgrep --quiet "$2" "$1"; then
+		print_info "file <$1> already contains" ${3:-'necessary string'}
+	else
+		print_info "file <$1> appended" ${3:+with "$3"}
+		echo >> "$1" # blank line
+		echo "$2" >> "$1"
+	fi
 }
 
 # [Homebrew](http://brew.sh/)
@@ -25,7 +43,7 @@ ssh-add ~/.ssh/id_rsa
 gpg --keyserver hkp://keys.gnupg.net \
 	--recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl --fail --silent --show-error --location https://get.rvm.io | bash -s stable
-echo 'IRB.conf[:PROMPT_MODE] = :SIMPLE' >> ~/.irbrc
+ensure_include ~/.irbrc 'IRB.conf[:PROMPT_MODE] = :SIMPLE'
 
 # Git
 full_name_default="$(dscl . -read /Users/`whoami` RealName | tr "\n" " " |

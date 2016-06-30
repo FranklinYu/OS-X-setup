@@ -1,14 +1,14 @@
 set -e -o pipefail
 
-print_warning() {
-	tput setaf 3
+print_info() {
+	tput setaf 2
 	echo "$1"
 	tput sgr 0
 }
 
 # [Homebrew](http://brew.sh/)
 if /usr/bin/which -s brew; then
-	print_warning 'Warning: Homebrew found; installation skipped.'
+	print_info 'Homebrew found; installation skipped.'
 else
 	hb_url='https://raw.githubusercontent.com/Homebrew/install/master/install'
 	curl --fail --silent --show-error --location $hb_url | ruby

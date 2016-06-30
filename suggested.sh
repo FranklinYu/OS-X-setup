@@ -2,7 +2,7 @@ set -e -o pipefail
 
 print_warning() {
 	tput setaf 3
-	echo $1
+	echo "$1"
 	tput sgr 0
 }
 

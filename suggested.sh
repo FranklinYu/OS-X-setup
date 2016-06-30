@@ -1,4 +1,4 @@
-set -e -o pipefail
+set -o errexit -o pipefail -o nounset
 
 print_info() {
 	tput setaf 2

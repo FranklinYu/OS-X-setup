@@ -10,7 +10,8 @@ print_warning() {
 if /usr/bin/which -s brew; then
 	print_warning 'Warning: Homebrew found; installation skipped.'
 else
-	curl --fail --silent --show-error --location $homebrew_url | ruby
+	hb_url='https://raw.githubusercontent.com/Homebrew/install/master/install'
+	curl --fail --silent --show-error --location $hb_url | ruby
 fi
 brew tap Homebrew/bundle
 brew bundle install

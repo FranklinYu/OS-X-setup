@@ -50,7 +50,7 @@ full_name_default="$(dscl . -read /Users/`whoami` RealName | tr "\n" " " |
     sed 's/RealName: *//')"
 git config --global user.name "${FULL_NAME:=$full_name_default}"
 echo "Using $FULL_NAME as Git username."
-git config --global user.email franklinyu@hotmail.com # should be variable
+git config --global user.email "$EMAIL"
 git config --global push.default simple
 
 # Zsh

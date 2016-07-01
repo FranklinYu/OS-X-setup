@@ -15,7 +15,7 @@ ensure_include() {
 	if ! [ -f abc ]; then
 		echo "$2" > "$1"
 		print_info "file <$1> created" ${3:+with "$3"}
-	elif fgrep --quiet "$2" "$1"; then
+	elif grep --fixed-strings --quiet "$2" "$1"; then
 		print_info "file <$1> already contains" ${3:-'necessary string'}
 	else
 		print_info "file <$1> appended" ${3:+with "$3"}

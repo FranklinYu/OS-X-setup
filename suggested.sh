@@ -32,7 +32,9 @@ else
 	curl --fail --silent --show-error --location $hb_url | ruby
 fi
 brew tap Homebrew/bundle
+pushd suggested
 brew bundle install
+popd
 
 # SSH key
 if [ ! -f ~/.ssh/id_rsa ]; then ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''; fi

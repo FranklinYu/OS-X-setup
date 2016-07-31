@@ -39,10 +39,8 @@ if [ ! -f ~/.ssh/id_rsa ]; then ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''; fi
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
-# RVM and Ruby
-gpg --keyserver hkp://keys.gnupg.net \
-	--recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl --fail --silent --show-error --location https://get.rvm.io | bash -s stable
+# Ruby
+sudo gem update --system # `RUBYGEMS_GEMDEPS` requires RubyGems >= 2.2.0
 ensure_include ~/.irbrc 'IRB.conf[:PROMPT_MODE] = :SIMPLE'
 
 # Git

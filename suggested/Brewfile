@@ -16,6 +16,8 @@ brew 'cmake'
 brew 'gradle'
 
 # package manager
+brew 'chruby'
+brew 'ruby-install'
 brew 'haskell-stack'
 brew 'nvm'
 brew 'pyenv'

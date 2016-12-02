@@ -36,8 +36,6 @@ brew bundle install --file=suggested/Brewfile
 
 # SSH key
 if [ ! -f ~/.ssh/id_rsa ]; then ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''; fi
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
 
 # Ruby
 sudo gem update --system # `RUBYGEMS_GEMDEPS` requires RubyGems >= 2.2.0

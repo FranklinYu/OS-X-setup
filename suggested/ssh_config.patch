@@ -1,0 +1,9 @@
+--- /etc/ssh/ssh_config
++++ /etc/ssh/ssh_config
+@@ -19,4 +19,4 @@
+ 
+-Host *
+-  SendEnv LANG LC_*
++# Host *
++#   SendEnv LANG LC_*
+ 

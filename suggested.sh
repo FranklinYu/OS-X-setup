@@ -34,8 +34,9 @@ fi
 brew tap Homebrew/bundle
 brew bundle install --file=suggested/Brewfile
 
-# SSH key
+# SSH
 if [ ! -f ~/.ssh/id_rsa ]; then ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''; fi
+sudo patch --strip=0 < suggested/ssh_config.patch
 
 # Ruby
 sudo gem update --system # `RUBYGEMS_GEMDEPS` requires RubyGems >= 2.2.0

@@ -10,6 +10,7 @@ brew 'pstree'
 brew 'ssh-copy-id'
 brew 'tree'
 brew 'unrar'
+brew 'valgrind'
 brew 'wget'
 
 # build tools
@@ -28,8 +29,9 @@ brew 'pyenv-virtualenv'
 # Caskroom #
 ############
 tap 'Caskroom/cask'
+cask 'cocoapods-app'
 cask 'macdown'
-cask 'squrrel'
+cask 'squirrel'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'sublime-text'

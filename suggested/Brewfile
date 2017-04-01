@@ -1,5 +1,12 @@
 brew 'diff-so-fancy'
 
+# core utilities
+brew 'coreutils'
+brew 'findutils'
+brew 'gnu-tar'
+brew 'gnu-sed'
+brew 'gawk'
+
 # utilities
 brew 'appledoc'
 brew 'dos2unix'

@@ -1,4 +1,4 @@
-export PATH=~/bin:$PATH
+path=(~/bin $path)
 
 export CFLAGS='-Wall -Wextra -Wpedantic -Wshadow'
 export CXXFLAGS='-Wall -Wextra -Wpedantic -Wshadow'

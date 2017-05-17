@@ -1,4 +1,4 @@
-if [ -f ~/.bash_aliases ]; then source ~/.bash_aliases; fi
+if [ -f ~/.config/zsh/aliases ]; then source ~/.config/zsh/aliases; fi
 
 source '/usr/local/share/chruby/chruby.sh'
 source '/usr/local/share/chruby/auto.sh'

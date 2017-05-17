@@ -51,10 +51,11 @@ git config --global user.email "$EMAIL"
 git config --global push.default simple
 
 # Zsh
+mkdir -p ~/.config/zsh
+mkdir -p ~/.local/share/zsh
 if [ -f ~/.zshrc ]; then echo >> ~/.zshrc; fi
 cat suggested/zshrc.zsh >> ~/.zshrc
 cp suggested/zprofile.zsh ~/.zprofile
-mkdir -p ~/.config/zsh
 cp suggested/aliases.zsh ~/.config/zsh/aliases
 
 # Vim

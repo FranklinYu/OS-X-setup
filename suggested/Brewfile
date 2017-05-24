@@ -36,6 +36,7 @@ brew 'pyenv-virtualenv'
 # Caskroom #
 ############
 tap 'Caskroom/cask'
+cask 'atom'
 cask 'cocoapods-app'
 cask 'docker'
 cask 'macdown'

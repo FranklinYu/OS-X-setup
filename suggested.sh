@@ -60,3 +60,6 @@ cp suggested/aliases.zsh ~/.config/zsh/aliases
 
 # Vim
 cp suggested/.vimrc ~/.vimrc
+
+# Atom home
+cp suggested/io.atom.setting.homedir.plist ~/Library/LaunchAgents/
